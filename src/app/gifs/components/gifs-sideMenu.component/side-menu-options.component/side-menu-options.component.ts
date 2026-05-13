@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { routes } from '../../../../app.routes';
 import { RouterLink, RouterLinkActive } from "@angular/router";
+import { GifsServices } from 'src/app/gifs/services/GifsServices';
 
 interface MenuOption{
   label:string,
@@ -16,6 +17,9 @@ interface MenuOption{
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuOptionsComponent { 
+
+  gifService=inject(GifsServices);
+  
   menuOptions:MenuOption[]=[
     {
       icon:'fa-solid fa-arrow-trend-up',

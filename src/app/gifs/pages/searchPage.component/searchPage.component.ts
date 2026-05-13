@@ -6,15 +6,13 @@ import { GifsServices } from '../../services/GifsServices';
   selector: 'app-search-page.component',
   imports: [GifsListComponent],
   templateUrl: './searchPage.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchPageComponent { 
+export class SearchPageComponent {
 
-  gifService = inject(GifsServices)
+  gifService = inject(GifsServices);
 
   onSearch(query:string){
-    console.log(query);
-    this.gifService.searchGifs(query)
+    this.gifService.searchGifs(query).subscribe();
   }
 
 }

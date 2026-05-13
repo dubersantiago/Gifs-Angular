@@ -1,7 +1,7 @@
 <h2 class="text-2xl font-bold mt-5 ">Buscar Gifs</h2>
 <h3 class="text-sm text-gray-500">Buscar gifs por nombre descipcion o tags</h3>
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-4 mb-2">
     <input
         type="text"
         placeholder="Buscar Gifs"
@@ -12,5 +12,9 @@
 </section>
 
 <section>
-    <gifs-list [images]="[]"/>
+    @if(gifService.serchGifsLoading()){
+        <p class="text-gray-400 mt-4">Cargando gifs...</p>
+    } @else {
+        <gifs-list [images]="gifService.serchGifs()"/>
+    }
 </section>
