@@ -12,7 +12,7 @@ RUN npm ci
 COPY . .
 
 # Generar environment.ts con los valores recibidos como ARG
-RUN printf "export const environment = {\n\
+RUN mkdir -p src/environments && printf "export const environment = {\n\
     Name: \"Gifs\",\n\
     subName: \"App\",\n\
     Slogan: \"Maneja tus Gifs\",\n\
